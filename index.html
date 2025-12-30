@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pandaravaniyan Tamil School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <img src="images/logo.jpg" alt="Pandaravaniyan Tamil School Logo" class="logo">
+    <h1>Pandaravaniyan Tamil Kalvi Kalayagam</h1>
+    <p>பண்டார வன்னியன் தமிழ்க் கல்விக் கலையகம்</p>
+
+    <div class="nav-toggle" id="nav-toggle">&#9776;</div>
+    <nav id="nav-menu">
+      <a href="#about">About</a>
+      <a href="#classes">Classes</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>Preserving Tamil Language & Culture</h2>
+    <p>தமிழ் மொழி, இலக்கியம் மற்றும் பண்பாட்டை வளர்ப்போம்</p>
+    <a href="#contact" class="btn">Join Us</a>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <h2>About Us | எங்களைப் பற்றி</h2>
+  <p>Pandaravaniyan Tamil Kalvi Kalayagam provides structured Tamil language education for children, focusing on reading, writing, speaking, and cultural values.</p>
+  <p>பண்டாரவன்னியன் தமிழ் பள்ளி குழந்தைகளுக்கு தமிழ் மொழி மற்றும் பண்பாட்டை கற்றுத்தரும் கல்வி நிலையமாக செயல்படுகிறது.</p>
+</section>
+
+<section id="classes" class="section">
+  <h2>Classes | வகுப்புகள்</h2>
+  <ul>
+    <li>Beginner Tamil</li>
+    <li>Intermediate Tamil</li>
+    <li>Advanced Tamil</li>
+    <li>Thirukkural & Tamil Culture</li>
+  </ul>
+</section>
+
+<section id="calendar" class="section">
+  <h2>Academic Calendar</h2>
+  <p>📅 Classes held on Saturdays / சனிக்கிழமைகளில் வகுப்புகள் நடைபெறும்</p>
+  <p>🗓 September – July 2026 / செப்டம்பர் 2025 - ஜூலை 2026</p>
+</section>
+
+<section id="gallery" class="section">
+  <h2>Gallery | புகைப்படங்கள்</h2>
+  <div class="gallery">
+    <img src="images/photo1.jpg" alt="Tamil Class">
+    <img src="images/photo2.jpg" alt="Cultural Event">
+    <img src="images/photo3.jpg" alt="Students Learning Tamil">
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact Us | தொடர்புக்கு</h2>
+  <p>Email: info@pandaravaniyantamilschool.org</p>
+  <p>Location: Melrose On The Hill, St Andrew's Church Hall Church Gardens, 956 Harrow Road, Sudbury HA0 2QA</p>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Pandaravaniyan Tamil Kalvi Kalayagam</p>
+</footer>
+
+<script>
+  // Toggle navigation menu on mobile
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('nav-menu');
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
