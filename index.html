@@ -7,30 +7,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Arima:wght@400;700&family=Mukta+Malar:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #800000; /* Deep Maroon */
-            --primary-light: #a52a2a;
-            --secondary: #ffcc00; /* Gold */
-            --dark: #1a1a1a;
-            --bg-light: #ffffff;
-            --bg-tint: #fdf8f2; /* Very subtle warm tint for alternating sections */
-            --text-main: #2d2d2d;
+            --primary: #800000; 
+            --secondary: #ffcc00; 
+            --bg-tint: #fdf8f2;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Mukta+Malar', sans-serif;
             margin: 0; padding: 0; line-height: 1.6; 
-            color: var(--text-main);
-            background-color: var(--bg-light);
+            color: #333; background-color: #fff;
         }
 
-        /* 1. STICKY HEADER WITH GRADIENT BORDER */
         header {
-            background: #fff;
-            padding: 10px 0;
+            background: #fff; padding: 10px 0;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             position: sticky; top: 0; z-index: 1000;
             border-bottom: 3px solid var(--primary);
@@ -40,101 +31,53 @@
         header .container { display: flex; justify-content: space-between; align-items: center; }
         
         .logo-group { display: flex; align-items: center; }
-        .logo { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary); }
-        header h1 { font-size: 1.3rem; color: var(--primary); font-family: 'Arima', cursive; margin-left: 15px; }
+        .logo { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary); }
+        header h1 { font-size: 1.2rem; color: var(--primary); font-family: 'Arima', cursive; margin-left: 15px; }
 
-        nav a {
-            text-decoration: none; color: var(--primary); font-weight: bold;
-            margin-left: 20px; font-size: 1rem; transition: 0.3s;
-            position: relative;
-        }
-        nav a:hover { color: var(--primary-light); }
-        nav a::after {
-            content: ''; width: 0; height: 2px; background: var(--secondary);
-            position: absolute; bottom: -5px; left: 0; transition: 0.3s;
-        }
-        nav a:hover::after { width: 100%; }
+        nav a { text-decoration: none; color: var(--primary); font-weight: bold; margin-left: 20px; transition: 0.3s; }
+        nav a:hover { color: var(--secondary); }
 
-        /* 2. HERO SECTION WITH VIBRANT OVERLAY */
         .hero {
-            background: linear-gradient(rgba(128, 0, 0, 0.65), rgba(0, 0, 0, 0.7)), url('images/photo1.jpg');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/photo1.jpg');
             background-size: cover; background-position: center;
-            height: 450px; display: flex; align-items: center; justify-content: center;
+            height: 400px; display: flex; align-items: center; justify-content: center;
             text-align: center; color: white;
         }
-        .hero-content h2 { font-size: 2.8rem; font-family: 'Arima', cursive; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
 
-        .btn-join {
-            background: var(--secondary); color: var(--primary); 
-            padding: 14px 35px; text-decoration: none; border-radius: 50px; 
-            font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
-            transition: 0.3s;
-        }
-        .btn-join:hover { background: white; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+        .section { padding: 80px 0; }
+        .section h2 { color: var(--primary); text-align: center; font-size: 2.2rem; margin-bottom: 40px; font-family: 'Arima', cursive; }
 
-        /* 3. SECTION COLORS */
-        .section { padding: 100px 0 80px 0; }
-        
-        /* Alternating Background Colors */
-        #about { background-color: var(--bg-light); }
-        #classes { background-color: var(--bg-tint); }
-        #calendar { background-color: var(--bg-light); }
-        #gallery { background-color: var(--bg-tint); }
-        #contact { background-color: var(--bg-light); }
-
-        .section h2 { 
-            color: var(--primary); text-align: center; font-size: 2.3rem; 
-            margin-bottom: 40px; font-family: 'Arima', cursive; 
-        }
-
-        /* 4. CARDS & BOXES */
-        .classes-card { 
-            background: white; padding: 40px; border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(128, 0, 0, 0.05); 
+        /* CALENDAR IMAGE STYLING */
+        .calendar-box {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
             border: 1px solid #eee;
         }
-        .classes-card ul { list-style: none; padding: 0; }
-        .classes-card li { margin-bottom: 15px; font-size: 1.1rem; padding-left: 30px; position: relative; }
-        .classes-card li::before { content: '✔'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
 
-        .gallery {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        .gallery img { 
-            width: 100%; height: 250px; object-fit: cover; border-radius: 15px; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: 0.4s;
-        }
-        .gallery img:hover { transform: scale(1.03); }
-
-        .contact-box { 
-            display: grid; grid-template-columns: 1fr 1fr; gap: 40px; 
-            background: #fff; padding: 40px; border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-        }
-        input, textarea { 
-            width: 100%; padding: 14px; margin-bottom: 15px; 
-            border: 1px solid #e0e0e0; border-radius: 10px; 
-            background: #fdfdfd; font-family: inherit;
-        }
-        button { 
-            background: var(--primary); color: white; border: none; 
-            padding: 16px; width: 100%; border-radius: 10px; 
-            cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.3s;
-        }
-        button:hover { background: var(--dark); transform: translateY(-2px); }
-
-        footer { 
-            background: linear-gradient(var(--primary), var(--dark)); 
-            color: white; text-align: center; padding: 50px 0; 
+        .calendar-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
         }
 
-        @media (max-width: 768px) {
-            header .container { flex-direction: column; }
-            nav { margin: 15px 0; }
-            .hero-content h2 { font-size: 2rem; }
-            .contact-box { grid-template-columns: 1fr; }
+        .calendar-info {
+            background: var(--bg-tint);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary);
         }
+
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 15px; }
+
+        footer { background: #1a1a1a; color: white; text-align: center; padding: 40px 0; }
     </style>
 </head>
 <body>
@@ -145,92 +88,50 @@
         <img src="images/logo.jpg" alt="Logo" class="logo" onerror="this.src='https://via.placeholder.com/60/800000/FFFFFF?text=P'">
         <h1>பண்டார வன்னியன்</h1>
     </div>
-
     <nav>
-      <a href="#about">எங்களைப் பற்றி</a>
-      <a href="#classes">வகுப்புகள்</a>
-      <a href="#calendar">கால அட்டவணை</a>
-      <a href="#gallery">புகைப்படங்கள்</a>
-      <a href="#contact">தொடர்புக்கு</a>
+      <a href="#about">About</a>
+      <a href="#classes">Classes</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <h2>பண்டார வன்னியன் தமிழ் கல்விக் கலையகம்</h2>
-    <p style="font-size: 1.4rem; margin-bottom: 30px; opacity: 0.9;">மரபு வழி நின்று தமிழ் வளர்ப்போம்</p>
-    <a href="#contact" class="btn-join">Join Us / எம்முடன் இணையுங்கள்</a>
-  </div>
+    <h2 style="font-size: 2.5rem; font-family: 'Arima', cursive; color: white;">தமிழ் கல்விக் கலையகம்</h2>
 </section>
 
-<section id="about" class="section">
-  <div class="container">
-    <h2>எங்களைப் பற்றி</h2>
-    <p style="text-align:center; font-size: 1.25rem; max-width: 850px; margin: auto; color: #555;">
-        பண்டார வன்னியன் தமிழ் கல்விக் கலையகம் குழந்தைகளுக்கு தமிழ் மொழி மற்றும் பண்பாட்டை கற்றுத்தரும் சிறந்த கல்வி நிலையமாக செயல்படுகிறது.
-    </p>
-  </div>
-</section>
+<div class="container">
+    <section id="about" class="section">
+      <h2>எங்களைப் பற்றி</h2>
+      <p style="text-align:center; font-size: 1.2rem; max-width: 800px; margin: auto;">பண்டார வன்னியன் தமிழ் பள்ளி குழந்தைகளுக்கு தமிழ் மொழி மற்றும் பண்பாட்டை கற்றுத்தரும் கல்வி நிலையமாக செயல்படுகிறது.</p>
+    </section>
 
-<section id="classes" class="section">
-  <div class="container">
-    <h2>வகுப்புகள்</h2>
-    <div class="classes-card">
-        <ul>
-          <li><strong>அனைத்து நிலைகளும்:</strong> ஆரம்பக் கல்வி முதல் உயர்தரம் (GCE A/L) வரை.</li>
-          <li><strong>சிறப்பு பயிற்சிகள்:</strong> Cambridge O/L மற்றும் A/L பரீட்சைகளுக்கான விசேட தயார்படுத்தல்கள்.</li>
-          <li><strong>ஆசிரியர்கள்:</strong> அனுபவமுள்ள ஆசிரியைகளால் தனித்தனி வகுப்பறைகளில் கற்பிக்கப்படுகிறது.</li>
-          <li><strong>மொழித்திறன்:</strong> பேச்சு, எழுத்து மற்றும் வாசிப்புத் திறன்களுக்கு முக்கியத்துவம் அளிக்கப்படுகிறது.</li>
-        </ul>
-    </div>
-  </div>
-</section>
+    <section id="calendar" class="section" style="background-color: var(--bg-tint); border-radius: 30px; margin-bottom: 40px;">
+      <h2>கால அட்டவணை (Calendar)</h2>
+      <div class="calendar-box">
+          <img src="images/calendar-image.jpg" alt="School Calendar" class="calendar-img" onerror="this.src='https://via.placeholder.com/800x400?text=Calendar+Image+Will+Appear+Here'">
+          
+          <div class="calendar-info">
+              <p style="font-size: 1.3rem; margin: 0; color: var(--primary);">📅 <strong>சனிக்கிழமைகளில்</strong> வகுப்புகள் நடைபெறும்</p>
+              <p style="font-size: 1.1rem; margin: 10px 0 0;">🗓 செப்டம்பர் 2025 - ஜூலை 2026</p>
+          </div>
+      </div>
+    </section>
 
-<section id="calendar" class="section">
-  <div class="container" style="text-align: center;">
-    <h2>கால அட்டவணை</h2>
-    <div style="background: var(--secondary); padding: 40px; border-radius: 20px; display: inline-block; box-shadow: 0 10px 25px rgba(255,204,0,0.3);">
-      <p style="font-size: 1.5rem; margin: 0; color: var(--primary);">📅 <strong>சனிக்கிழமைகளில்</strong> வகுப்புகள் நடைபெறும்</p>
-      <p style="font-size: 1.2rem; margin: 10px 0 0; color: var(--primary); opacity: 0.8;">🗓 செப்டம்பர் 2025 - ஜூலை 2026</p>
-    </div>
-  </div>
-</section>
-
-<section id="gallery" class="section">
-  <div class="container">
-    <h2>புகைப்படங்கள்</h2>
-    <div class="gallery">
-      <img src="images/photo1.jpg" alt="Gallery 1" onerror="this.src='https://via.placeholder.com/400x300?text=Activity+1'">
-      <img src="images/photo2.jpg" alt="Gallery 2" onerror="this.src='https://via.placeholder.com/400x300?text=Activity+2'">
-      <img src="images/photo3.jpg" alt="Gallery 3" onerror="this.src='https://via.placeholder.com/400x300?text=Activity+3'">
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <div class="container">
-    <h2>தொடர்புக்கு</h2>
-    <div class="contact-box">
-        <div style="padding-top: 10px;">
-            <p style="font-size: 1.1rem; margin-bottom: 20px;">எம்மைத் தொடர்பு கொள்ள கீழே உள்ள விபரங்களைப் பயன்படுத்தவும் அல்லது படிவத்தை நிரப்பவும்.</p>
-            <p>📧 <strong>Email:</strong> pandaravaniyan.tamil@gmail.com</p>
-            <p>📍 <strong>Location:</strong> St Andrew's Church Hall, Sudbury HA0 2QA</p>
-            <p>📞 <strong>Phone:</strong> [இங்கே உங்கள் தொலைபேசி எண்ணை சேர்க்கவும்]</p>
-        </div>
-        <form>
-          <input type="text" placeholder="உங்கள் பெயர் (Your Name)" required>
-          <input type="email" placeholder="உங்கள் மின்னஞ்சல் (Email)" required>
-          <textarea placeholder="உங்கள் செய்தி (Message)" rows="5" required></textarea>
-          <button type="submit">செய்தியை அனுப்பவும் (Send)</button>
-        </form>
-    </div>
-  </div>
-</section>
+    <section id="gallery" class="section">
+      <h2>புகைப்படங்கள்</h2>
+      <div class="gallery">
+        <img src="images/photo1.jpg" alt="Gallery 1">
+        <img src="images/photo2.jpg" alt="Gallery 2">
+        <img src="images/photo3.jpg" alt="Gallery 3">
+      </div>
+    </section>
+</div>
 
 <footer>
-  <p>© 2026 Pandaravaniyan Tamil Kalvi Kalayagam | All Rights Reserved</p>
-  <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">Sudbury, United Kingdom</p>
+  <p>© 2026 Pandaravaniyan Tamil Kalvi Kalayagam</p>
 </footer>
 
 </body>
