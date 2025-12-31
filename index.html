@@ -86,4 +86,148 @@
         .gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; }
 
         .contact-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; background: #fff; padding: 30px; border-radius: 15px; box-shadow: var(--shadow); }
-        input, textarea { width: 10
+        input, textarea { width: 100%; padding: 10px; margin-bottom: 12px; border: 2px solid #f0f0f0; border-radius: 8px; box-sizing: border-box; }
+        button { background: var(--primary); color: white; border: none; padding: 12px; width: 100%; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1rem; }
+
+        footer { background: #1a1a1a; color: white; text-align: center; padding: 25px 0; border-top: 5px solid var(--secondary); }
+
+        @media (max-width: 768px) {
+            .section { padding: 35px 0; }
+            .about-grid, .contact-flex { grid-template-columns: 1fr; text-align: center; gap: 25px; }
+            nav a { margin: 5px 6px; }
+            .hero h2 { font-size: 1.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="#" class="logo-group">
+        <img src="images/logo.jpg" alt="Logo" class="logo" onerror="this.src='https://via.placeholder.com/45/800000/FFFFFF?text=P'">
+        <h1>பண்டார வன்னியன் தமிழ்க் கல்விக் கலையகம்</h1>
+    </a>
+    <nav>
+      <a href="#about">எங்களைப் பற்றி</a>
+      <a href="#classes">வகுப்புகள்</a>
+      <a href="#calendar">கால அட்டவணை</a>
+      <a href="#gallery">புகைப்படங்கள்</a>
+      <a href="#pastpapers">வினாத்தாள்கள்</a>
+      <a href="#contact">தொடர்புக்கு</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+    <h2>பண்டார வன்னியன் தமிழ் கல்விக் கலையகம்</h2>
+    <a href="#contact" style="background: var(--secondary); color: var(--primary); padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 0.95rem;">Join Us Today</a>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <h2>எங்களைப் பற்றி</h2>
+    <div class="about-grid">
+        <div class="about-text">
+            <p>பண்டாரவன்னியன் தமிழ் பள்ளி குழந்தைகளுக்கு தமிழ் மொழி மற்றும் பண்பாட்டை கற்றுத்தரும் சிறந்த கல்வி நிலையமாக செயல்படுகிறது.</p>
+            <p>அனுபவம் வாய்ந்த ஆசிரியைகளால் தமிழ் மொழி, இலக்கியம் மற்றும் கலைகள் மிகச் சிறந்த முறையில் கற்பிக்கப்படுகின்றன.</p>
+        </div>
+        <div class="about-img">
+            <img src="images/photo1.jpg" alt="Our School" onerror="this.src='https://via.placeholder.com/500x350?text=School+Photo'">
+        </div>
+    </div>
+  </div>
+</section>
+
+<section id="classes" class="section">
+  <div class="container">
+    <h2>வகுப்புகள்</h2>
+    <div class="classes-card">
+        <ul>
+          <li><strong>ஆரம்பக் கல்வி முதல் உயர்தரம் (GCE A/L) வரை.</strong></li>
+          <li>Cambridge O/L மற்றும் A/L பரீட்சைகளுக்கான விசேட தயார்படுத்தல்கள்.</li>
+          <li>தனித்தனி வகுப்பறைகள் மற்றும் நவீன கற்பித்தல் முறைகள்.</li>
+          <li>மாணவர்களின் தமிழ் பேச்சு மற்றும் எழுத்துத் திறன் மேம்பாடு.</li>
+        </ul>
+    </div>
+  </div>
+</section>
+
+<section id="calendar" class="section">
+  <div class="container">
+    <h2>கால அட்டவணை 2026</h2>
+    <div class="calendar-box">
+        <table class="schedule-table">
+            <thead>
+                <tr><th>தேதி</th><th>நேரம் / குறிப்பு</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>10/01/26</td><td>9:00 - 12:00</td></tr>
+                <tr><td>17/01/26</td><td>9:00 - 12:00</td></tr>
+                <tr class="exam"><td>24/01/26</td><td>அரையாண்டு தேர்வு</td></tr>
+                <tr><td>31/01/26</td><td>9:00 - 12:00</td></tr>
+                <tr><td>07/02/26</td><td>9:00 - 12:00</td></tr>
+                <tr class="holiday"><td>14/02/26</td><td>பள்ளி விடுமுறை</td></tr>
+                <tr><td>21/02/26</td><td>9:00 - 12:00</td></tr>
+                <tr><td>28/02/26</td><td>9:00 - 12:00</td></tr>
+                <tr><td>07/03/26</td><td>9:00 - 12:00</td></tr>
+                <tr><td>14/03/26</td><td>9:00 - 12:00</td></tr>
+                <tr><td>21/03/26</td><td>9:00 - 12:00</td></tr>
+                <tr><td>28/03/26</td><td>9:00 - 12:00</td></tr>
+            </tbody>
+        </table>
+        <div style="background: var(--bg-tint); padding: 10px; border-radius: 8px; border-left: 4px solid var(--primary); text-align: center;">
+            <p style="font-size: 1rem; margin: 0; color: var(--primary); font-weight: bold;">🎹 இசை வகுப்புகள்: 12:00 - 1:00</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section">
+  <div class="container">
+    <h2>புகைப்படங்கள்</h2>
+    <div class="gallery">
+      <img src="images/photo1.jpg" alt="Students 1" onerror="this.src='https://via.placeholder.com/400x300?text=Photo+1'">
+      <img src="images/photo2.jpg" alt="Event" onerror="this.src='https://via.placeholder.com/400x300?text=Photo+2'">
+      <img src="images/photo3.jpg" alt="Learning" onerror="this.src='https://via.placeholder.com/400x300?text=Photo+3'">
+    </div>
+  </div>
+</section>
+
+<section id="pastpapers" class="section">
+  <div class="container">
+    <h2>வினாத்தாள்கள்</h2>
+    <div style="padding: 20px; background: #fff; border: 1px dashed var(--primary); border-radius: 12px; text-align: center;">
+        <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 12px;">Year 2 - அரை ஆண்டுத் தேர்வு</h3>
+        <a href="pastpapers/year2/halfyearly/v2_2018_2019.pdf" target="_blank" style="display: inline-block; background: var(--primary); color: white; padding: 10px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.9rem;">
+            📥 2018-2019 வினாத்தாள் (PDF)
+        </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <h2>தொடர்புக்கு</h2>
+    <div class="contact-flex">
+        <div>
+            <h3 style="color: var(--primary); font-family: 'Arima', cursive; margin-top: 0; font-size: 1.2rem;">Contact Details</h3>
+            <p style="margin-top: 10px; font-size: 0.95rem;">📧 <strong>Email:</strong> pandaravaniyan.tamil@gmail.com</p>
+            <p style="font-size: 0.95rem;">📍 <strong>Location:</strong> St Andrew's Church Hall, Sudbury HA0 2QA</p>
+            <p style="font-size: 0.95rem;">📞 <strong>Phone:</strong> 07506 254805</p>
+        </div>
+        <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+          <input type="text" name="name" placeholder="உங்கள் பெயர்" required>
+          <input type="email" name="email" placeholder="உங்கள் மின்னஞ்சல்" required>
+          <textarea name="message" placeholder="உங்கள் செய்தி" rows="3" required></textarea>
+          <button type="submit">செய்தியை அனுப்பவும்</button>
+        </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+    <p style="font-size: 0.9rem; margin: 0;">© 2026 Pandaravaniyan Tamil Kalvi Kalayagam</p>
+</footer>
+
+</body>
+</html>
