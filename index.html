@@ -42,12 +42,12 @@
         
         .logo-group { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
         .logo { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--primary); object-fit: cover; }
-        header h1 { font-size: 0.95rem; color: var(--primary); font-family: 'Arima', cursive; margin-left: 8px; line-height: 1.2; }
+        header h1 { font-size: 0.9rem; color: var(--primary); font-family: 'Arima', cursive; margin-left: 8px; line-height: 1.2; }
 
         nav { display: flex; align-items: center; }
         nav a {
             text-decoration: none; color: var(--primary); font-weight: bold;
-            margin-left: 15px; font-size: 0.85rem; transition: 0.3s;
+            margin-left: 15px; font-size: 0.8rem; transition: 0.3s;
             white-space: nowrap;
         }
         nav a:hover { color: var(--secondary); }
@@ -59,18 +59,18 @@
             cursor: pointer;
             gap: 4px;
             padding: 5px;
-            margin-left: auto; /* Pushes toggle to the right */
+            margin-left: auto;
         }
-        /* Reduced size of bars */
-        .menu-toggle span { width: 22px; height: 2px; background: var(--primary); border-radius: 2px; }
+        /* Smaller bars */
+        .menu-toggle span { width: 20px; height: 2px; background: var(--primary); border-radius: 2px; }
 
         .container { max-width: 1100px; margin: auto; padding: 0 20px; }
 
-        /* --- HERO & SECTIONS --- */
+        /* --- SECTIONS --- */
         .hero {
             background: linear-gradient(rgba(128, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('images/photo4.jpg');
             background-size: cover; background-position: center;
-            height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            height: 320px; display: flex; flex-direction: column; align-items: center; justify-content: center;
             text-align: center; color: white;
         }
         .hero h2 { font-size: 1.8rem; font-family: 'Arima', cursive; margin: 0 20px 15px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
@@ -79,9 +79,9 @@
         .section h2 { color: var(--primary); text-align: center; font-size: 1.8rem; margin-bottom: 25px; font-family: 'Arima', cursive; }
         section:nth-of-type(even) { background-color: var(--bg-tint); }
 
-        /* --- CALENDAR/SCHEDULE --- */
-        .calendar-box { background: #fff; padding: 15px; border-radius: 15px; box-shadow: var(--shadow); max-width: 500px; margin: auto; }
-        .schedule-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 0.9rem; }
+        /* --- CALENDAR --- */
+        .calendar-box { background: #fff; padding: 15px; border-radius: 15px; box-shadow: var(--shadow); max-width: 500px; margin: auto; overflow-x: auto; }
+        .schedule-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 0.85rem; }
         .schedule-table th { background-color: var(--primary); color: white; padding: 8px; border: 1px solid #ddd; }
         .schedule-table td { padding: 6px; border: 1px solid #ddd; text-align: center; }
 
@@ -92,33 +92,40 @@
         }
         details summary {
             padding: 15px 20px; font-weight: bold; color: var(--primary); cursor: pointer;
-            list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem;
+            list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;
         }
         details summary::after { content: "▼"; font-size: 0.7rem; }
         details[open] summary::after { content: "▲"; }
 
-        .year-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
-        .category-header { display: block; font-weight: bold; color: #555; border-bottom: 2px solid #eee; padding-bottom: 8px; margin-bottom: 12px; font-size: 0.9rem; }
-        .scroll-box { max-height: 350px; overflow-y: auto; padding-right: 10px; }
+        .year-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; }
+        .category-header { display: block; font-weight: bold; color: #555; border-bottom: 2px solid #eee; padding-bottom: 8px; margin-bottom: 12px; font-size: 0.85rem; }
+        .scroll-box { max-height: 400px; overflow-y: auto; padding-right: 10px; }
         
         .paper-link {
-            display: block; padding: 10px; background: #f9f9f9; color: var(--text-dark);
+            display: block; padding: 10px 12px; background: #f9f9f9; color: var(--text-dark);
             text-decoration: none; border-radius: 6px; border-left: 4px solid var(--secondary);
-            margin-bottom: 8px; font-size: 0.85rem;
+            margin-bottom: 8px; font-size: 0.8rem; line-height: 1.4;
         }
+        .paper-link i { float: right; font-style: normal; }
         .half-yearly-link { border-left-color: #3498db !important; }
 
-        /* --- MOBILE ADJUSTMENTS --- */
+        /* --- CONTACT --- */
+        .contact-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; background: #fff; padding: 30px; border-radius: 15px; box-shadow: var(--shadow); }
+        input, textarea, button { width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #eee; box-sizing: border-box; font-size: 0.9rem; }
+        button { background: var(--primary); color: white; border: none; font-weight: bold; cursor: pointer; }
+
+        /* --- MOBILE MEDIA QUERY --- */
         @media (max-width: 850px) {
-            .menu-toggle { display: flex; } /* Now aligned right via margin-left: auto */
+            .menu-toggle { display: flex; }
             nav {
                 display: none; position: absolute; top: 100%; left: 0; right: 0;
                 background: white; flex-direction: column; padding: 15px;
-                border-bottom: 4px solid var(--primary); box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                border-bottom: 4px solid var(--primary); box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             }
             nav.active { display: flex; }
-            nav a { margin: 8px 0; text-align: center; font-size: 0.95rem; }
-            header h1 { font-size: 0.8rem; max-width: 170px; }
+            nav a { margin: 8px 0; text-align: center; font-size: 0.9rem; }
+            header h1 { font-size: 0.75rem; max-width: 160px; }
+            .about-grid, .contact-flex { grid-template-columns: 1fr; }
             .hero h2 { font-size: 1.4rem; }
         }
     </style>
@@ -129,7 +136,7 @@
   <div class="container">
     <a href="#" class="logo-group">
         <img src="images/logo.jpg" alt="Logo" class="logo" onerror="this.src='https://via.placeholder.com/40/800000/FFFFFF?text=P'">
-        <h1>பண்டார வன்னியன் தமிழ்க் கல்வி</h1>
+        <h1>பண்டார வன்னியன் தமிழ்க் கல்விக் கலையகம்</h1>
     </a>
     
     <div class="menu-toggle" id="mobile-toggle">
@@ -149,7 +156,37 @@
 
 <section class="hero">
     <h2>பண்டார வன்னியன் தமிழ் கல்விக் கலையகம்</h2>
-    <a href="#contact" style="background: var(--secondary); color: var(--primary); padding: 10px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 0.9rem;">வகுப்பில் சேர</a>
+    <a href="#contact" style="background: var(--secondary); color: var(--primary); padding: 10px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 0.85rem;">வகுப்பில் சேர</a>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <h2>எங்களைப் பற்றி</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: center;">
+        <div>
+            <p>பண்டாரவன்னியன் தமிழ் பள்ளி குழந்தைகளுக்கு தமிழ் மொழி மற்றும் பண்பாட்டை கற்றுத்தரும் சிறந்த கல்வி நிலையமாக செயல்படுகிறது.</p>
+        </div>
+        <div>
+            <img src="images/photo1.jpg" alt="School" style="width:100%; border-radius:12px; box-shadow: 6px 6px 0 var(--primary);" onerror="this.src='https://via.placeholder.com/500x350'">
+        </div>
+    </div>
+  </div>
+</section>
+
+<section id="calendar" class="section">
+  <div class="container">
+    <h2>கால அட்டவணை 2026</h2>
+    <div class="calendar-box">
+        <table class="schedule-table">
+            <thead><tr><th>தேதி</th><th>நேரம் / குறிப்பு</th></tr></thead>
+            <tbody>
+                <tr><td>10/01/26</td><td>9:00 - 12:00</td></tr>
+                <tr style="color: #006400; font-weight: bold;"><td>24/01/26</td><td>அரையாண்டு தேர்வு</td></tr>
+                <tr style="color: #d00000; font-weight: bold;"><td>14/02/26</td><td>பள்ளி விடுமுறை</td></tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
 </section>
 
 <section id="pastpapers" class="section">
@@ -162,20 +199,27 @@
             <div class="year-grid">
                 <div>
                     <span class="category-header">🌓 அரை ஆண்டு</span>
-                    <a href="pastpapers/year1/halfyearly/வளர்தமிழ்-1_2018.pdf" class="paper-link half-yearly-link">2018 - வளர்தமிழ் 1</a>
-                    <a href="pastpapers/year1/halfyearly/வளர்தமிழ்-1_2010.pdf" class="paper-link half-yearly-link">2010 - வளர்தமிழ் 1</a>
+                    <a href="pastpapers/year1/halfyearly/வளர்தமிழ்-1_Valar-Thamil-1_2018_Half_Yearly.pdf" target="_blank" class="paper-link half-yearly-link">2018 - வளர்தமிழ் 1 <i>📥</i></a>
+                    <a href="pastpapers/year1/halfyearly/வளர்தமிழ்-1_Valar-Thamil-1_2010_Half_Yearly.pdf" target="_blank" class="paper-link half-yearly-link">2010 - வளர்தமிழ் 1 <i>📥</i></a>
                 </div>
                 <div>
                     <span class="category-header">📅 ஆண்டுத் தேர்வு</span>
                     <div class="scroll-box">
-                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_2024.pdf" class="paper-link">2024 - வளர்தமிழ் 1</a>
-                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_2023.pdf" class="paper-link">2023 - வளர்தமிழ் 1</a>
-                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_2022.pdf" class="paper-link">2022 - வளர்தமிழ் 1</a>
-                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_2021.pdf" class="paper-link">2021 - வளர்தமிழ் 1</a>
-                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_2020.pdf" class="paper-link">2020 - வளர்தமிழ் 1</a>
-                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_2019.pdf" class="paper-link">2019 - வளர்தமிழ் 1</a>
-                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_2018.pdf" class="paper-link">2018 - வளர்தமிழ் 1</a>
-                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_2010.pdf" class="paper-link">2010 - வளர்தமிழ் 1</a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2024_Year-End.pdf" target="_blank" class="paper-link">2024 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2023_Year-End.pdf" target="_blank" class="paper-link">2023 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2022_Year-End.pdf" target="_blank" class="paper-link">2022 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2021_Year-End.pdf" target="_blank" class="paper-link">2021 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2020_Year-End.pdf" target="_blank" class="paper-link">2020 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2019_Year-End.pdf" target="_blank" class="paper-link">2019 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2018_Year-End.pdf" target="_blank" class="paper-link">2018 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2017_Year-End.pdf" target="_blank" class="paper-link">2017 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2016_Year-End.pdf" target="_blank" class="paper-link">2016 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2015_Year-End.pdf" target="_blank" class="paper-link">2015 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2014_Year-End.pdf" target="_blank" class="paper-link">2014 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2013_Year-End.pdf" target="_blank" class="paper-link">2013 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2012_Year-End.pdf" target="_blank" class="paper-link">2012 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2011_Year-End.pdf" target="_blank" class="paper-link">2011 - வளர்தமிழ் 1 <i>📥</i></a>
+                        <a href="pastpapers/year1/yearly/வளர்தமிழ்-1_Valar-Thamil-1_2010_Year-End.pdf" target="_blank" class="paper-link">2010 - வளர்தமிழ் 1 <i>📥</i></a>
                     </div>
                 </div>
             </div>
@@ -188,11 +232,11 @@
             <div class="year-grid">
                 <div>
                     <span class="category-header">🌓 அரை ஆண்டு</span>
-                    <a href="pastpapers/year2/halfyearly/y2_half_2019.pdf" class="paper-link half-yearly-link">2018-2019 வினாத்தாள்</a>
+                    <a href="pastpapers/year2/halfyearly/y2_half_2019.pdf" target="_blank" class="paper-link half-yearly-link">2018-2019 வினாத்தாள் <i>📥</i></a>
                 </div>
                 <div>
                     <span class="category-header">📅 ஆண்டுத் தேர்வு</span>
-                    <a href="pastpapers/year2/yearly/y2_2024.pdf" class="paper-link">2024 - வளர்தமிழ் 2</a>
+                    <a href="pastpapers/year2/yearly/y2_2024.pdf" target="_blank" class="paper-link">2024 - வளர்தமிழ் 2 <i>📥</i></a>
                 </div>
             </div>
         </details>
@@ -203,12 +247,15 @@
 <section id="contact" class="section">
   <div class="container">
     <h2>தொடர்புக்கு</h2>
-    <div style="background: #fff; padding: 25px; border-radius: 15px; box-shadow: var(--shadow); max-width: 600px; margin: auto;">
-        <p style="text-align: center;">📧 pandaravaniyan.tamil@gmail.com | 📞 07506 254805</p>
+    <div class="contact-flex">
+        <div>
+            <p>📧 pandaravaniyan.tamil@gmail.com</p>
+            <p>📞 07506 254805</p>
+        </div>
         <form action="https://formspree.io/f/mzdzprll" method="POST">
-            <input type="text" name="name" placeholder="உங்கள் பெயர்" required>
+            <input type="text" name="name" placeholder="பெயர்" required>
             <input type="email" name="email" placeholder="மின்னஞ்சல்" required>
-            <textarea name="message" placeholder="உங்கள் செய்தி" rows="3" required></textarea>
+            <textarea name="message" placeholder="செய்தி" rows="3" required></textarea>
             <button type="submit">அனுப்பவும்</button>
         </form>
     </div>
