@@ -200,73 +200,120 @@
     </div>
   </div>
 </section>
-<div class="year-accordion">
-    <details>
-        <summary>ஆண்டு 2 (Year 2)</summary>
-        <div class="year-grid">
-            <div>
-                <div class="category-header">🌓 அரை ஆண்டு (Half Yearly)</div>
-                <div class="paper-list-container">
-                    <a href="pastpapers/year2/halfyearly/y2_half_2019.pdf" target="_blank" class="paper-link half-yearly-link">2018-2019 வினாத்தாள் <i>📥</i></a>
-                </div>
-            </div>
-            <div>
-                <div class="category-header">📅 ஆண்டுத் தேர்வு (Yearly)</div>
-                <div class="scroll-box">
-                    <div class="paper-list-container">
-                        <a href="pastpapers/year2/yearly/y2_2024.pdf" target="_blank" class="paper-link">2024 - வளர்தமிழ் 2 <i>📥</i></a>
-                        <a href="pastpapers/year2/yearly/வளர்தமிழ்-2_Valar-Thamil-2_2023_Year-End.pdf" target="_blank" class="paper-link">2023 - வளர்தமிழ் 2 <i>📥</i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </details>
-</div>
+<section id="pastpapers" class="section">
+  <div class="container">
+    <h2>வினாத்தாள்கள்</h2>
 
-<div class="year-accordion">
-    <details>
-        <summary>ஆண்டு 3 (Year 3)</summary>
-        <div class="year-grid">
-            <div>
-                <div class="category-header">🌓 அரை ஆண்டு (Half Yearly)</div>
-                <div class="paper-list-container">
-                    <a href="pastpapers/year3/halfyearly/வளர்தமிழ்-3_Valar-Thamil-3_2018_Half_Yearly.pdf" target="_blank" class="paper-link half-yearly-link">2018 - வளர்தமிழ் 3 <i>📥</i></a>
-                </div>
-            </div>
-            <div>
-                <div class="category-header">📅 ஆண்டுத் தேர்வு (Yearly)</div>
-                <div class="scroll-box">
-                    <div class="paper-list-container">
-                        <a href="pastpapers/year3/yearly/வளர்தமிழ்-3_Valar-Thamil-3_2024_Year-End.pdf" target="_blank" class="paper-link">2024 - வளர்தமிழ் 3 <i>📥</i></a>
-                        <a href="pastpapers/year3/yearly/வளர்தமிழ்-3_Valar-Thamil-3_2023_Year-End.pdf" target="_blank" class="paper-link">2023 - வளர்தமிழ் 3 <i>📥</i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </details>
-</div>
+    <style>
+        .year-accordion {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-top: 5px solid var(--primary);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: var(--shadow);
+        }
 
-<div class="year-accordion">
-    <details>
-        <summary>ஆண்டு 4 (Year 4)</summary>
-        <div class="year-grid">
-            <div>
-                <div class="category-header">🌓 அரை ஆண்டு (Half Yearly)</div>
-                <div class="paper-list-container">
-                    <a href="pastpapers/year4/halfyearly/வளர்தமிழ்-4_Valar-Thamil-4_2018_Half_Yearly.pdf" target="_blank" class="paper-link half-yearly-link">2018 - வளர்தமிழ் 4 <i>📥</i></a>
+        details summary {
+            padding: 20px;
+            font-weight: bold;
+            color: var(--primary);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        details summary::after { content: "▼"; font-size: 0.8rem; }
+        details[open] summary::after { content: "▲"; }
+
+        .year-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .category-header {
+            display: block; 
+            font-weight: bold; 
+            color: #555; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .paper-list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .paper-link {
+            display: block; 
+            padding: 12px 15px;
+            background: #f9f9f9;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 6px;
+            border-left: 4px solid var(--secondary);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .paper-link i { float: right; font-style: normal; }
+        .half-yearly-link { border-left-color: #3498db !important; }
+
+        .scroll-box {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+    </style>
+
+    <div id="accordion-container"></div>
+
+    <script>
+        const container = document.getElementById('accordion-container');
+        
+        for (let year = 1; year <= 12; year++) {
+            let yearlyLinks = '';
+            let halfYearlyLinks = '';
+            
+            // Generate Yearly Links 2024-2010
+            for (let y = 2024; y >= 2010; y--) {
+                yearlyLinks += `<a href="pastpapers/year${year}/yearly/வளர்தமிழ்-${year}_Valar-Thamil-${year}_${y}_Year-End.pdf" target="_blank" class="paper-link">${y} - வளர்தமிழ் ${year} <i>📥</i></a>`;
+            }
+
+            // Generate Half Yearly Links (matching your pattern)
+            for (let y = 2018; y >= 2010; y--) {
+                halfYearlyLinks += `<a href="pastpapers/year${year}/halfyearly/வளர்தமிழ்-${year}_Valar-Thamil-${year}_${y}_Half_Yearly.pdf" target="_blank" class="paper-link half-yearly-link">${y} - வளர்தமிழ் ${year} <i>📥</i></a>`;
+            }
+
+            container.innerHTML += `
+                <div class="year-accordion">
+                    <details>
+                        <summary>ஆண்டு ${year} (Year ${year})</summary>
+                        <div class="year-grid">
+                            <div>
+                                <div class="category-header">🌓 அரை ஆண்டு (Half Yearly)</div>
+                                <div class="scroll-box"><div class="paper-list-container">${halfYearlyLinks}</div></div>
+                            </div>
+                            <div>
+                                <div class="category-header">📅 ஆண்டுத் தேர்வு (Yearly)</div>
+                                <div class="scroll-box"><div class="paper-list-container">${yearlyLinks}</div></div>
+                            </div>
+                        </div>
+                    </details>
                 </div>
-            </div>
-            <div>
-                <div class="category-header">📅 ஆண்டுத் தேர்வு (Yearly)</div>
-                <div class="scroll-box">
-                    <div class="paper-list-container">
-                        <a href="pastpapers/year4/yearly/வளர்தமிழ்-4_Valar-Thamil-4_2024_Year-End.pdf" target="_blank" class="paper-link">2024 - வளர்தமிழ் 4 <i>📥</i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </details>
-</div>
+            `;
+        }
+    </script>
+  </div>
+</section>
 <section id="contact" class="section">
   <div class="container">
     <h2>தொடர்புக்கு</h2>
@@ -293,11 +340,6 @@
 
 </body>
 </html>
-
-
-
-
-
 
 
 
