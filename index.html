@@ -19,7 +19,7 @@
 
         body {
             font-family: 'Mukta+Malar', sans-serif;
-            margin: 0; padding: 0; line-height: 1.5; 
+            margin: 0; padding: 0; line-height: 1.4; 
             color: var(--text-dark);
             background-color: var(--bg-white);
         }
@@ -37,197 +37,53 @@
         header .container { display: flex; justify-content: space-between; align-items: center; }
         
         .logo-group { display: flex; align-items: center; text-decoration: none; }
-        .logo { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--primary); object-fit: cover; }
-        header h1 { font-size: 1.1rem; color: var(--primary); font-family: 'Arima', cursive; margin-left: 12px; }
+        .logo { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--primary); object-fit: cover; }
+        header h1 { font-size: 1rem; color: var(--primary); font-family: 'Arima', cursive; margin-left: 10px; }
 
         nav a {
             text-decoration: none; color: var(--primary); font-weight: bold;
-            margin-left: 15px; font-size: 0.95rem; transition: 0.3s;
+            margin-left: 12px; font-size: 0.9rem; transition: 0.3s;
         }
         nav a:hover { color: var(--secondary); }
 
         .hero {
             background: linear-gradient(rgba(128, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('images/photo4.jpg');
             background-size: cover; background-position: center;
-            height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            height: 350px; display: flex; flex-direction: column; align-items: center; justify-content: center;
             text-align: center; color: white;
         }
-        .hero h2 { font-size: 2.5rem; font-family: 'Arima', cursive; margin: 0 20px 15px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+        .hero h2 { font-size: 2.2rem; font-family: 'Arima', cursive; margin: 0 20px 15px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
 
-        /* COMPACT SPACING HERE */
-        .section { padding: 60px 0; } 
-        .section h2 { color: var(--primary); text-align: center; font-size: 2.2rem; margin-bottom: 30px; font-family: 'Arima', cursive; }
+        .section { padding: 50px 0; } 
+        .section h2 { color: var(--primary); text-align: center; font-size: 2rem; margin-bottom: 25px; font-family: 'Arima', cursive; }
 
         section:nth-of-type(even) { background-color: var(--bg-tint); }
         section:nth-of-type(odd) { background-color: var(--bg-white); }
 
+        /* COMPACT TABLE SIZE */
         .calendar-box {
-            background: #fff; padding: 25px; border-radius: 20px;
-            box-shadow: var(--shadow); max-width: 850px; margin: auto; overflow-x: auto;
+            background: #fff; padding: 15px; border-radius: 15px;
+            box-shadow: var(--shadow); max-width: 500px; margin: auto; overflow-x: auto;
         }
         .schedule-table {
-            width: 100%; border-collapse: collapse; margin-bottom: 20px; min-width: 300px;
+            width: 100%; border-collapse: collapse; margin-bottom: 15px;
         }
-        .schedule-table th { background-color: var(--primary); color: white; padding: 12px; border: 1px solid #ddd; }
-        .schedule-table td { padding: 10px; border: 1px solid #ddd; text-align: center; font-size: 1rem; }
+        .schedule-table th { background-color: var(--primary); color: white; padding: 8px; border: 1px solid #ddd; font-size: 0.95rem; }
+        .schedule-table td { padding: 6px; border: 1px solid #ddd; text-align: center; font-size: 0.95rem; }
         .holiday { color: #d00000; font-weight: bold; }
         .exam { color: #006400; font-weight: bold; }
 
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .about-text { font-size: 1.1rem; }
-        .about-img img { width: 100%; border-radius: 15px; box-shadow: 10px 10px 0 var(--primary); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
+        .about-text { font-size: 1.05rem; }
+        .about-img img { width: 100%; border-radius: 12px; box-shadow: 8px 8px 0 var(--primary); }
 
-        .classes-card { background: #fff; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); border: 1px solid rgba(128,0,0,0.1); }
+        .classes-card { background: #fff; padding: 25px; border-radius: 15px; box-shadow: var(--shadow); border: 1px solid rgba(128,0,0,0.1); }
         .classes-card ul { list-style: none; padding: 0; margin: 0; }
-        .classes-card li { margin-bottom: 12px; font-size: 1.05rem; padding-left: 30px; position: relative; }
+        .classes-card li { margin-bottom: 10px; font-size: 1rem; padding-left: 25px; position: relative; }
         .classes-card li::before { content: '✔'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
 
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 15px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; }
 
-        .contact-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: #fff; padding: 35px; border-radius: 20px; box-shadow: var(--shadow); }
-        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 2px solid #f0f0f0; border-radius: 10px; box-sizing: border-box; }
-        button { background: var(--primary); color: white; border: none; padding: 15px; width: 100%; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1rem; }
-
-        footer { background: #1a1a1a; color: white; text-align: center; padding: 30px 0; border-top: 5px solid var(--secondary); }
-
-        @media (max-width: 768px) {
-            .section { padding: 40px 0; }
-            .about-grid, .contact-flex { grid-template-columns: 1fr; text-align: center; gap: 30px; }
-            nav a { margin: 5px 8px; }
-            .hero h2 { font-size: 1.8rem; }
-        }
-    </style>
-</head>
-<body>
-
-<header>
-  <div class="container">
-    <a href="#" class="logo-group">
-        <img src="images/logo.jpg" alt="Logo" class="logo" onerror="this.src='https://via.placeholder.com/50/800000/FFFFFF?text=P'">
-        <h1>பண்டார வன்னியன் தமிழ்க் கல்விக் கலையகம்</h1>
-    </a>
-    <nav>
-      <a href="#about">எங்களைப் பற்றி</a>
-      <a href="#classes">வகுப்புகள்</a>
-      <a href="#calendar">கால அட்டவணை</a>
-      <a href="#gallery">புகைப்படங்கள்</a>
-      <a href="#pastpapers">வினாத்தாள்கள்</a>
-      <a href="#contact">தொடர்புக்கு</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-    <h2>பண்டார வன்னியன் தமிழ் கல்விக் கலையகம்</h2>
-    <a href="#contact" style="background: var(--secondary); color: var(--primary); padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1rem;">Join Us Today</a>
-</section>
-
-<section id="about" class="section">
-  <div class="container">
-    <h2>எங்களைப் பற்றி</h2>
-    <div class="about-grid">
-        <div class="about-text">
-            <p>பண்டாரவன்னியன் தமிழ் பள்ளி குழந்தைகளுக்கு தமிழ் மொழி மற்றும் பண்பாட்டை கற்றுத்தரும் சிறந்த கல்வி நிலையமாக செயல்படுகிறது.</p>
-            <p>அனுபவம் வாய்ந்த ஆசிரியைகளால் தமிழ் மொழி, இலக்கியம் மற்றும் கலைகள் மிகச் சிறந்த முறையில் கற்பிக்கப்படுகின்றன.</p>
-        </div>
-        <div class="about-img">
-            <img src="images/photo1.jpg" alt="Our School" onerror="this.src='https://via.placeholder.com/500x350?text=School+Photo'">
-        </div>
-    </div>
-  </div>
-</section>
-
-<section id="classes" class="section">
-  <div class="container">
-    <h2>வகுப்புகள்</h2>
-    <div class="classes-card">
-        <ul>
-          <li><strong>ஆரம்பக் கல்வி முதல் உயர்தரம் (GCE A/L) வரை.</strong></li>
-          <li>Cambridge O/L மற்றும் A/L பரீட்சைகளுக்கான விசேட தயார்படுத்தல்கள்.</li>
-          <li>தனித்தனி வகுப்பறைகள் மற்றும் நவீன கற்பித்தல் முறைகள்.</li>
-          <li>மாணவர்களின் தமிழ் பேச்சு மற்றும் எழுத்துத் திறன் மேம்பாடு.</li>
-        </ul>
-    </div>
-  </div>
-</section>
-
-<section id="calendar" class="section">
-  <div class="container">
-    <h2>கால அட்டவணை 2026</h2>
-    <div class="calendar-box">
-        <table class="schedule-table">
-            <thead>
-                <tr><th>தேதி</th><th>நேரம் / குறிப்பு</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>10/01/26</td><td>9:00 - 12:00</td></tr>
-                <tr><td>17/01/26</td><td>9:00 - 12:00</td></tr>
-                <tr class="exam"><td>24/01/26</td><td>அரையாண்டு தேர்வு</td></tr>
-                <tr><td>31/01/26</td><td>9:00 - 12:00</td></tr>
-                <tr><td>07/02/26</td><td>9:00 - 12:00</td></tr>
-                <tr class="holiday"><td>14/02/26</td><td>பள்ளி விடுமுறை</td></tr>
-                <tr><td>21/02/26</td><td>9:00 - 12:00</td></tr>
-                <tr><td>28/02/26</td><td>9:00 - 12:00</td></tr>
-                <tr><td>07/03/26</td><td>9:00 - 12:00</td></tr>
-                <tr><td>14/03/26</td><td>9:00 - 12:00</td></tr>
-                <tr><td>21/03/26</td><td>9:00 - 12:00</td></tr>
-                <tr><td>28/03/26</td><td>9:00 - 12:00</td></tr>
-            </tbody>
-        </table>
-        <div style="background: var(--bg-tint); padding: 12px; border-radius: 10px; border-left: 5px solid var(--primary); text-align: center;">
-            <p style="font-size: 1.1rem; margin: 0; color: var(--primary); font-weight: bold;">🎹 இசை வகுப்புகள்: 12:00 - 1:00</p>
-        </div>
-    </div>
-  </div>
-</section>
-
-<section id="gallery" class="section">
-  <div class="container">
-    <h2>புகைப்படங்கள்</h2>
-    <div class="gallery">
-      <img src="images/photo1.jpg" alt="Students 1" onerror="this.src='https://via.placeholder.com/400x300?text=Photo+1'">
-      <img src="images/photo2.jpg" alt="Event" onerror="this.src='https://via.placeholder.com/400x300?text=Photo+2'">
-      <img src="images/photo3.jpg" alt="Learning" onerror="this.src='https://via.placeholder.com/400x300?text=Photo+3'">
-    </div>
-  </div>
-</section>
-
-<section id="pastpapers" class="section">
-  <div class="container">
-    <h2>வினாத்தாள்கள்</h2>
-    <div style="padding: 25px; background: #fff; border: 1px dashed var(--primary); border-radius: 15px; text-align: center;">
-        <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 15px;">Year 2 - அரை ஆண்டுத் தேர்வு</h3>
-        <a href="pastpapers/year2/halfyearly/v2_2018_2019.pdf" target="_blank" style="display: inline-block; background: var(--primary); color: white; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-weight: bold;">
-            📥 2018-2019 வினாத்தாள் (PDF)
-        </a>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <div class="container">
-    <h2>தொடர்புக்கு</h2>
-    <div class="contact-flex">
-        <div>
-            <h3 style="color: var(--primary); font-family: 'Arima', cursive; margin-top: 0;">Contact Details</h3>
-            <p style="margin-top: 15px;">📧 <strong>Email:</strong> pandaravaniyan.tamil@gmail.com</p>
-            <p>📍 <strong>Location:</strong> St Andrew's Church Hall, Sudbury HA0 2QA</p>
-            <p>📞 <strong>Phone:</strong> 07506 254805</p>
-        </div>
-        <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
-          <input type="text" name="name" placeholder="உங்கள் பெயர்" required>
-          <input type="email" name="email" placeholder="உங்கள் மின்னஞ்சல்" required>
-          <textarea name="message" placeholder="உங்கள் செய்தி" rows="4" required></textarea>
-          <button type="submit">செய்தியை அனுப்பவும்</button>
-        </form>
-    </div>
-  </div>
-</section>
-
-<footer>
-    <p style="font-size: 0.95rem; margin: 0;">© 2026 Pandaravaniyan Tamil Kalvi Kalayagam</p>
-</footer>
-
-</body>
-</html>
+        .contact-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; background: #fff; padding: 30px; border-radius: 15px; box-shadow: var(--shadow); }
+        input, textarea { width: 10
