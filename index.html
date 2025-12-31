@@ -24,7 +24,7 @@
             background-color: var(--bg-white);
         }
 
-        /* --- HEADER & NAVIGATION (FIXED & SMALLER) --- */
+        /* --- HEADER & NAVIGATION --- */
         header {
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
@@ -78,10 +78,6 @@
         .section h2 { color: var(--primary); text-align: center; font-size: 1.6rem; margin-bottom: 25px; font-family: 'Arima', cursive; }
         section:nth-of-type(even) { background-color: var(--bg-tint); }
 
-        /* --- CLASSES & CONTENT --- */
-        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: center; }
-        .about-img img { width: 100%; border-radius: 12px; box-shadow: 6px 6px 0 var(--primary); }
-
         /* --- CALENDAR/SCHEDULE --- */
         .calendar-box { background: #fff; padding: 15px; border-radius: 15px; box-shadow: var(--shadow); max-width: 500px; margin: auto; overflow-x: auto; }
         .schedule-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 0.8rem; }
@@ -113,7 +109,6 @@
         .half-yearly-link { border-left-color: #3498db !important; }
 
         /* --- CONTACT --- */
-        .contact-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: #fff; padding: 25px; border-radius: 15px; box-shadow: var(--shadow); }
         input, textarea, button { width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #eee; box-sizing: border-box; font-size: 0.8rem; }
         button { background: var(--primary); color: white; border: none; font-weight: bold; cursor: pointer; }
 
@@ -128,7 +123,6 @@
             nav.active { display: flex; }
             nav a { margin: 6px 0; text-align: center; font-size: 0.85rem; width: 100%; margin-left: 0; }
             header h1 { font-size: 0.75rem; max-width: 150px; }
-            .about-grid, .contact-flex { grid-template-columns: 1fr; }
             .hero h2 { font-size: 1.3rem; }
         }
     </style>
@@ -165,13 +159,13 @@
 <section id="about" class="section">
   <div class="container">
     <h2>எங்களைப் பற்றி</h2>
-    <div class="about-grid">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: center;">
         <div>
             <p>பண்டாரவன்னியன் தமிழ் பள்ளி குழந்தைகளுக்கு தமிழ் மொழி மற்றும் பண்பாட்டை கற்றுத்தரும் சிறந்த கல்வி நிலையமாக செயல்படுகிறது.</p>
             <p>அனுபவம் வாய்ந்த ஆசிரியைகளால் தமிழ் மொழி, இலக்கியம் மற்றும் கலைகள் மிகச் சிறந்த முறையில் கற்பிக்கப்படுகின்றன.</p>
         </div>
-        <div class="about-img">
-            <img src="images/photo1.jpg" alt="School" onerror="this.src='https://via.placeholder.com/500x350'">
+        <div>
+            <img src="images/photo1.jpg" alt="School" style="width: 100%; border-radius: 12px; box-shadow: 6px 6px 0 var(--primary);" onerror="this.src='https://via.placeholder.com/500x350'">
         </div>
     </div>
   </div>
@@ -192,16 +186,30 @@
     <h2>கால அட்டவணை 2026</h2>
     <div class="calendar-box">
         <table class="schedule-table">
-            <thead><tr><th>தேதி</th><th>நேரம் / குறிப்பு</th></tr></thead>
+            <thead>
+                <tr>
+                    <th>தேதி</th>
+                    <th>நேரம் / குறிப்பு</th>
+                </tr>
+            </thead>
             <tbody>
                 <tr><td>10/01/26</td><td>9:00 - 12:00</td></tr>
-                <tr style="color: #006400; font-weight: bold;"><td>24/01/26</td><td>அரையாண்டு தேர்வு</td></tr>
+                <tr><td>17/01/26</td><td>9:00 - 12:00</td></tr>
+                <tr style="color: #006400; font-weight: bold;"><td>24/01/26</td><td>அரையாண்டு தேர்வு (Half Yearly Exam)</td></tr>
+                <tr><td>31/01/26</td><td>9:00 - 12:00</td></tr>
                 <tr><td>07/02/26</td><td>9:00 - 12:00</td></tr>
-                <tr style="color: #d00000; font-weight: bold;"><td>14/02/26</td><td>பள்ளி விடுமுறை</td></tr>
+                <tr style="color: #d00000; font-weight: bold;"><td>14/02/26</td><td>பள்ளி விடுமுறை (School Holiday)</td></tr>
+                <tr style="color: #d00000; font-weight: bold;"><td>21/02/26</td><td>பள்ளி விடுமுறை (School Holiday)</td></tr>
+                <tr><td>28/02/26</td><td>9:00 - 12:00</td></tr>
+                <tr><td>07/03/26</td><td>9:00 - 12:00</td></tr>
+                <tr><td>14/03/26</td><td>9:00 - 12:00</td></tr>
+                <tr><td>21/03/26</td><td>9:00 - 12:00</td></tr>
+                <tr style="color: #006400; font-weight: bold;"><td>28/03/26</td><td>ஆண்டுத் தேர்வு (Annual Exam)</td></tr>
+                <tr style="background-color: var(--secondary); font-weight: bold;"><td>04/04/26</td><td>பரிசளிப்பு விழா (Prize Giving Day) 🏆</td></tr>
             </tbody>
         </table>
         <div style="background: var(--bg-tint); padding: 10px; border-radius: 8px; border-left: 4px solid var(--primary); text-align: center; font-size: 0.8rem;">
-            <p style="font-weight: bold; color: var(--primary); margin: 0;">🎹 இசை வகுப்புகள்: 12:00 - 1:00</p>
+            <p style="font-weight: bold; color: var(--primary); margin: 0;">🎹 இசை வகுப்புகள்: மதியம் 12:00 - 1:00 வரை</p>
         </div>
     </div>
   </div>
@@ -275,11 +283,11 @@
 <section id="contact" class="section">
   <div class="container">
     <h2>தொடர்புக்கு</h2>
-    <div class="contact-flex">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; background: #fff; padding: 25px; border-radius: 15px; box-shadow: var(--shadow);">
         <div>
-            <p>📧 pandaravaniyan.tamil@gmail.com</p>
-            <p>📍 St Andrew's Church Hall, Wembley, HA0 2QA</p>
-            <p>📞 07506 254805</p>
+            <p><strong>மின்னஞ்சல் (Email):</strong> pandaravaniyan.tamil@gmail.com</p>
+            <p><strong>முகவரி (Address):</strong> St Andrew's Church Hall, Wembley, HA0 2QA</p>
+            <p><strong>தொலைபேசி (Phone):</strong> 07506 254805</p>
         </div>
         <form action="https://formspree.io/f/mzdzprll" method="POST">
             <input type="text" name="name" placeholder="பெயர்" required>
@@ -303,7 +311,6 @@
         menu.classList.toggle('active');
     });
 
-    // Close menu when link is clicked
     document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', () => menu.classList.remove('active'));
     });
